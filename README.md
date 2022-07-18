@@ -34,5 +34,5 @@ Note: Script uses EASY MODE PIN for card administration and does not prompt to a
 - Install cryptnoxpro with command `pip install cryptnoxpro`
 - Run `cryptnox` to invoke the app
 - Run `Init -e` to initialize the card
-- Run `seed recover` to recover seed from mnemonics
+- Run `seed recover` to inject mnemonic in card
 - Card is ready for use with this script
