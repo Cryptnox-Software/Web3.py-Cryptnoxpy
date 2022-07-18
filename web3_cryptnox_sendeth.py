@@ -1,4 +1,3 @@
-from turtle import towards
 from eth_account._utils.legacy_transactions \
 import encode_transaction,serializable_unsigned_transaction_from_dict
 from web3.middleware import geth_poa_middleware
