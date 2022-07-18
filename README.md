@@ -1,8 +1,12 @@
 # Web3.py-Cryptnoxpy
 Example of how to use Cryptnox card for signing transactions within web3.py
 
+## Process/workflow
+Upon launch the script builds a transaction with the provided details to send eth from the from_wallet_address to the to_wallet_address, an amount of eth_to_send.
+Once built, the transaction is signed by the cryptnox card inserted in reader then broadcasts it to the blockchain. <br>Note: EASY MODE PIN is used for card administration.
+
 ## Prerequesites
-- Cryptnox BG1 card initialized and seeded.<br>(See Card initialization for more details)
+- Cryptnox BG1 card initialized with EASY MODE and seeded.<br>(See Card initialization for more details)
 - Card in reader connected to machine when running the script
 
 ## Setup
@@ -21,7 +25,8 @@ Example: `to_wallet_address = w3.toChecksumAddress('0x9z8x7y6w5v')`<br>
 Example: `eth_to_send = 0.0256`<br>
 
 ## Running the script
-- Run script with command: `python web3_cryptnox_sendeth.py`
+- Run script with command: `python web3_cryptnox_sendeth.py`<br>
+Note: Script uses EASY MODE PIN for card administration and does not prompt to ask the user for PIN.
 
 
 ## Card initialization
