@@ -65,12 +65,12 @@ if __name__ == "__main__":
     }
     try:
         card = cp.factory.get_card(cp.Connection())
-        card.verify_pin('12345')
+        card.verify_pin('000000000')
         PATH = "m/44'/60'/0'/0/0"
         public_key = card.get_public_key(0x01,path=PATH,compressed=False)
         card.derive(path=PATH)
         digest = transaction_hash(tx)
-        signature = card.sign(digest,pin='12345')
+        signature = card.sign(digest,pin='000000000')
         print(f'Transaction hash: {bytes(push(tx,signature,public_key)).hex()}')
         print('Done!')
     except Exception as e:
