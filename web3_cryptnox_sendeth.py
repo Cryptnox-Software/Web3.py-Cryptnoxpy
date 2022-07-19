@@ -19,11 +19,11 @@ eth_wei_to_send = w3.toWei(eth_to_send,'ether')
 
 
 def transaction_hash(transaction, chain_id =4 ,vrs: bool = False):
-        try:
-            del transaction["maxFeePerGas"]
-            del transaction["maxPriorityFeePerGas"]
-        except KeyError:
-            pass
+        for key_to_delete in ["maxFeePerGas","maxPriorityFeePerGas"]:
+            try:
+                del transaction[key_to_delete]
+            except KeyError:
+                pass
         unsigned_transaction = serializable_unsigned_transaction_from_dict(transaction)
         encoded_transaction = encode_transaction(unsigned_transaction, (chain_id, 0, 0))
         return keccak(encoded_transaction)
